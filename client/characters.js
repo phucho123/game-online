@@ -13,12 +13,12 @@ const characters = {
         attack1:{
             src:'./assets/first-hero/Attack1.png',
             frame: 4,
-            hold: 30
+            hold: 20
         },
         takehit:{
             src:'./assets/first-hero/Take hit.png',
             frame: 3,
-            hold: 40
+            hold: 25
         },
         death:{
             src:'./assets/first-hero/Death.png',

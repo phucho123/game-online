@@ -51,7 +51,6 @@ class Player{
         // ctx.fillRect(this.position.x,this.position.y,this.width,this.height);
         this.draw_healthbar(ctx,is_enemy);
         this.animation(ctx);
-        
     }
     moverment(){
         // console.log(this.position);
@@ -73,6 +72,7 @@ class Player{
         else if(this.position.x + this.width >=1024) this.position.x = 1024-this.width;
     }
     update(ctx,enemy,is_enemy){
+        if(this.attack && this.frame >= this.max_frame-1) this.attack = false;
         this.moverment();
         this.draw(ctx,is_enemy);
         this.attacker(enemy);
@@ -184,6 +184,8 @@ class Player{
                 this.last_sprite = 'idle';
                 break;
         }
+        this.el = 0;
+        this.frame = 0;
     }
     draw_healthbar(ctx,is_enemy){
         if(!is_enemy){
